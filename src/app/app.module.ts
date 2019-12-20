@@ -8,6 +8,8 @@ import {MainComponent} from './components/main/main.component';
 import {NotesComponent} from './components/notes/notes.component';
 import {NoteAddEditComponent} from './components/note-add-edit/note-add-edit.component';
 import {NoteDetailsComponent} from './components/note-details/note-details.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {NoteDetailsComponent} from './components/note-details/note-details.compo
     MainComponent,
     NotesComponent,
     NoteAddEditComponent,
-    NoteDetailsComponent
+    NoteDetailsComponent,
+    CategoryAddComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,
