@@ -10,6 +10,7 @@ import {NoteAddEditComponent} from './components/note-add-edit/note-add-edit.com
 import {NoteDetailsComponent} from './components/note-details/note-details.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
+import { CategoryManageComponent } from './components/category-manage/category-manage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CategoryEditComponent } from './components/category-edit/category-edit.
     NoteAddEditComponent,
     NoteDetailsComponent,
     CategoryAddComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    CategoryManageComponent
   ],
   imports: [
     BrowserModule,
