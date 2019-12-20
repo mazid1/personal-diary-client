@@ -1,3 +1,24 @@
-<p>
-  note-add-edit works!
-</p>
+<form class="col-lg-6 offset-lg-3">
+  <h2 class="text-center">Edit Note</h2>
+  <div class="form-group">
+    <label for="selectCategoryFormControl">Select Category</label>
+    <select class="form-control" id="selectCategoryFormControl">
+      <option>Home</option>
+      <option>Work</option>
+      <option>Budget</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="titleFormControl">Enter Title</label>
+    <input class="form-control" type="text" placeholder="Title" id="titleFormControl">
+  </div>
+  <div class="form-group">
+    <label for="noteFormControl">Enter Note</label>
+    <textarea class="form-control" id="noteFormControl" rows="3"></textarea>
+  </div>
+  <div class="float-right">
+    <button class="btn btn-secondary mr-2">Cancel</button>
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+</form>
