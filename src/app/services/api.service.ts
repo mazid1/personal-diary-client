@@ -16,4 +16,8 @@ export class ApiService {
   public getCategories(): Observable<Category[]> {
     return this.httpClient.get<Category[]>(`${this.apiUrl}/categories`);
   }
+
+  public createCategory(obj: { title: string }): Observable<Category> {
+    return this.httpClient.post<Category>(`${this.apiUrl}/category`, obj);
+  }
 }
