@@ -1,12 +1,12 @@
 <section class="navbar navbar-dark bg-dark">
   <a class="navbar-brand text-light" routerLink="/">{{ title }}</a>
   <div *ngIf="!currentUser" class="btn-group">
-    <button *ngIf="!currentUser" class="btn my-2 my-sm-0 btn-outline-light" routerLink="/login">Login</button>
-    <button *ngIf="!currentUser" class="btn my-2 my-sm-0 btn-outline-light" routerLink="/signup">Sign Up</button>
+    <button class="btn my-2 my-sm-0 btn-outline-light" routerLink="/login">Login</button>
+    <button class="btn my-2 my-sm-0 btn-outline-light" routerLink="/signup">Sign Up</button>
   </div>
   <div *ngIf="currentUser" class="btn-group">
-    <button *ngIf="currentUser" disabled
+    <button disabled
             class="btn btn-secondary">{{currentUser.username}}</button>
-    <button *ngIf="currentUser" (click)="logout()" class="btn btn-secondary">Logout</button>
+    <button (click)="logout()" class="btn btn-secondary">Logout</button>
   </div>
 </section>

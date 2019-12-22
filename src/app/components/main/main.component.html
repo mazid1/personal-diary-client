@@ -1,16 +1,16 @@
 <section class="container">
-  <div class="row">
+  <div *ngIf="!currentUser" class="row">
     <div class="col text-center">
-      <h1>Login or Sign Up to maintain your personal diary!</h1>
+      <h1>Login or Sign Up to keep your personal diary!</h1>
     </div>
   </div>
-  <div class="row mt-2">
+  <div *ngIf="currentUser" class="row mt-2">
     <div class="col-lg-4 col-md-6">
       <button class="btn btn-primary mr-2" routerLink="/add-note">Add Notes</button>
       <button class="btn btn-primary" routerLink="/manage-category">Manage Category</button>
     </div>
   </div>
-  <div class="row mt-2">
+  <div *ngIf="currentUser" class="row mt-2">
     <div class="col">
       <ngb-tabset>
         <ngb-tab *ngFor="let cat of categories; let i=index;" [id]="cat.id.toString()" title="{{cat.title}}">
