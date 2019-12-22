@@ -14,7 +14,7 @@ import {CategoryEditComponent} from './components/category-edit/category-edit.co
 import {CategoryManageComponent} from './components/category-manage/category-manage.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

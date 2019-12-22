@@ -1,20 +1,20 @@
-<form class="col-lg-6 offset-lg-3 mt-2">
+<div class="col-lg-6 offset-lg-3 mt-2">
   <h3 class="text-center form-group">Edit Category</h3>
   <div class="form-group">
-    <label for="selectCategoryFormControl">Select Category</label>
-    <select class="form-control" id="selectCategoryFormControl">
-      <option>Home</option>
-      <option>Work</option>
-      <option>Budget</option>
-      <option>Other</option>
+    <label for="selectCategoryFormControl">Select Category to update</label>
+    <select [(ngModel)]="selectedCategoryId" name="power" class="form-control" id="selectCategoryFormControl">
+      <option *ngFor="let cat of categories"
+              [value]="cat.id.toString()"
+      >{{cat.title}}</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="titleFormControl">Enter Category Title</label>
-    <input class="form-control" type="text" placeholder="Category" id="titleFormControl">
+    <label for="titleFormControl">Enter new Title</label>
+    <input [(ngModel)]="newTitle" class="form-control" type="text" placeholder="Category title" id="titleFormControl">
   </div>
   <div class="text-right form-group">
-    <button class="btn btn-secondary mr-2" type="button" (click)="onCancel()">Cancel</button>
-    <button class="btn btn-primary" type="submit">Save</button>
+    <button class="btn btn-secondary mr-2" type="button" (click)="onBack()">Back</button>
+    <button class="btn btn-danger mr-2" (click)="onDelete()">Delete</button>
+    <button class="btn btn-primary" (click)="onUpdate()">Update</button>
   </div>
-</form>
+</div>

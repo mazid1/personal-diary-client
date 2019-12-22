@@ -20,4 +20,12 @@ export class ApiService {
   public createCategory(obj: { title: string }): Observable<Category> {
     return this.httpClient.post<Category>(`${this.apiUrl}/category`, obj);
   }
+
+  public deleteCategory(id: string) {
+    return this.httpClient.delete(`${this.apiUrl}/category/${id}`);
+  }
+
+  public updateCategory(obj: { id: string, title: string }) {
+    return this.httpClient.put(`${this.apiUrl}/category/${obj.id}`, obj);
+  }
 }

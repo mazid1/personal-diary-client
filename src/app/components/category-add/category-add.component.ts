@@ -26,7 +26,7 @@ export class CategoryAddComponent implements OnInit {
     });
   }
 
-  onCancel() {
+  onBack() {
     this.location.back();
   }
 }
