@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -8,9 +9,9 @@ import {MainComponent} from './components/main/main.component';
 import {NotesComponent} from './components/notes/notes.component';
 import {NoteAddEditComponent} from './components/note-add-edit/note-add-edit.component';
 import {NoteDetailsComponent} from './components/note-details/note-details.component';
-import { CategoryAddComponent } from './components/category-add/category-add.component';
-import { CategoryEditComponent } from './components/category-edit/category-edit.component';
-import { CategoryManageComponent } from './components/category-manage/category-manage.component';
+import {CategoryAddComponent} from './components/category-add/category-add.component';
+import {CategoryEditComponent} from './components/category-edit/category-edit.component';
+import {CategoryManageComponent} from './components/category-manage/category-manage.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CategoryManageComponent } from './components/category-manage/category-m
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../services/api.service';
+import {Category} from '../../models/category';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  categories: Category[];
+
+  constructor(private apiService: ApiService) {
+  }
 
   ngOnInit() {
+    this.apiService.getCategories().subscribe((res: Category[]) => {
+      this.categories = res;
+    });
   }
 
 }
