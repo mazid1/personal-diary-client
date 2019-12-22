@@ -13,6 +13,8 @@ import {CategoryAddComponent} from './components/category-add/category-add.compo
 import {CategoryEditComponent} from './components/category-edit/category-edit.component';
 import {CategoryManageComponent} from './components/category-manage/category-manage.component';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import {CategoryManageComponent} from './components/category-manage/category-man
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
