@@ -34,6 +34,10 @@ export class ApiService {
     return this.httpClient.get<Note[]>(`${this.apiUrl}/notes/category/${id}`);
   }
 
+  public getNoteById(id: string | number): Observable<Note> {
+    return this.httpClient.get<Note>(`${this.apiUrl}/note/${id}`);
+  }
+
   public createNote(obj: { title: string, description: string, category: { id: string } }) {
     return this.httpClient.post(`${this.apiUrl}/note`, obj);
   }

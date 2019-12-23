@@ -23,6 +23,11 @@ export class NoteAddEditComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.noteId = params.get('id');
+      this.apiService.getNoteById(this.noteId).subscribe(note => {
+        this.selectedCategoryId = note.category.id;
+        this.title = note.title;
+        this.description = note.description;
+      });
     });
 
     this.apiService.getCategories().subscribe(res => {
