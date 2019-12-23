@@ -37,6 +37,7 @@ export class NoteAddEditComponent implements OnInit {
   onDelete() {
     this.apiService.deleteNote(this.noteId).subscribe(res => {
       console.log(`Note: ${this.noteId} is deleted!`);
+      alert('Note is Deleted');
     });
   }
 
@@ -48,6 +49,7 @@ export class NoteAddEditComponent implements OnInit {
         category: {id: this.selectedCategoryId.toString()}
       }).subscribe(res => {
         console.log('Note added');
+        alert('Note added');
       });
     } else {
       const req = {
@@ -57,6 +59,7 @@ export class NoteAddEditComponent implements OnInit {
       };
       this.apiService.updateNote(req, this.noteId).subscribe(res => {
         console.log('Note updated');
+        alert('Note updated');
       });
     }
   }

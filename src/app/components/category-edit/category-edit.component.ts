@@ -27,6 +27,7 @@ export class CategoryEditComponent implements OnInit {
   onDelete() {
     this.apiService.deleteCategory(this.selectedCategoryId).subscribe(res => {
       console.log('Deleted', this.selectedCategoryId, res);
+      alert('Category is Deleted');
     });
   }
 
@@ -34,6 +35,7 @@ export class CategoryEditComponent implements OnInit {
     console.log('Update', this.selectedCategoryId, this.newTitle);
     this.apiService.updateCategory({id: this.selectedCategoryId, title: this.newTitle}).subscribe(res => {
       console.log('Updated', this.selectedCategoryId, res);
+      alert('Category updated');
     });
   }
 

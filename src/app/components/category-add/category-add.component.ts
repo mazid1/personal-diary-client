@@ -23,6 +23,7 @@ export class CategoryAddComponent implements OnInit {
   onSubmit() {
     this.apiService.createCategory(this.addCategoryForm.value).subscribe(res => {
       console.log('response', res);
+      alert('Category created');
     });
   }
 
