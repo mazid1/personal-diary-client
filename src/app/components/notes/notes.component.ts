@@ -27,4 +27,8 @@ export class NotesComponent implements OnInit {
   clicked(id: string) {
     this.router.navigateByUrl(`/edit-note/${id}`);
   }
+
+  dateConversion(milliSecond: Date) {
+    return new Date(milliSecond).toLocaleDateString();
+  }
 }

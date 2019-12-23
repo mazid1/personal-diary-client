@@ -11,7 +11,7 @@
     <tr *ngFor="let note of notes; index as i;" (click)="clicked(note.id.toString())">
       <td>{{note.title}}</td>
       <td>{{note.description}}</td>
-      <td>{{note.date}}</td>
+      <td>{{dateConversion(note.date)}}</td>
     </tr>
     </tbody>
   </table>
