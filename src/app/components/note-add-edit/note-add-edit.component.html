@@ -1,24 +1,25 @@
-<form class="col-lg-6 offset-lg-3">
-  <h2 class="text-center form-group">Edit Note</h2>
+<div class="col-lg-6 offset-lg-3">
+  <h2 class="text-center form-group">{{noteId ? 'Edit Note' : 'Add Note'}}</h2>
   <div class="form-group">
     <label for="selectCategoryFormControl">Select Category</label>
-    <select class="form-control" id="selectCategoryFormControl">
-      <option>Home</option>
-      <option>Work</option>
-      <option>Budget</option>
-      <option>Other</option>
+    <select [(ngModel)]="selectedCategoryId" name="power" class="form-control" id="selectCategoryFormControl">
+      <option *ngFor="let cat of categories"
+              [value]="cat.id.toString()"
+      >{{cat.title}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="titleFormControl">Enter Title</label>
-    <input class="form-control" type="text" placeholder="Title" id="titleFormControl">
+    <input [(ngModel)]="title" class="form-control" type="text"
+           placeholder="Title" id="titleFormControl">
   </div>
   <div class="form-group">
-    <label for="noteFormControl">Enter Note</label>
-    <textarea class="form-control" id="noteFormControl" rows="3"></textarea>
+    <label for="noteFormControl">Enter Description</label>
+    <textarea [(ngModel)]="description" class="form-control" id="noteFormControl" rows="3"></textarea>
   </div>
   <div class="text-right form-group">
-    <button class="btn btn-secondary mr-2" (click)="onCancel()" type="button">Cancel</button>
-    <button class="btn btn-primary" type="submit">Save</button>
+    <button class="btn btn-secondary mr-2" type="button" (click)="onBack()">Back</button>
+    <button *ngIf="noteId" class="btn btn-danger mr-2" (click)="onDelete()">Delete</button>
+    <button class="btn btn-primary" (click)="onSave()">{{noteId ? 'Update' : 'Save'}}</button>
   </div>
-</form>
+</div>
