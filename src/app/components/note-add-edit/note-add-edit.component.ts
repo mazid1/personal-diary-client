@@ -13,7 +13,7 @@ export class NoteAddEditComponent implements OnInit {
 
   noteId: number | string;
   categories: Category[];
-  selectedCategoryId: number | string;
+  selectedCategoryId: number;
   title: string;
   description: string;
 
@@ -35,7 +35,9 @@ export class NoteAddEditComponent implements OnInit {
   }
 
   onDelete() {
-
+    this.apiService.deleteNote(this.noteId).subscribe(res => {
+      console.log(`Note: ${this.noteId} is deleted!`);
+    });
   }
 
   onSave() {
@@ -46,6 +48,15 @@ export class NoteAddEditComponent implements OnInit {
         category: {id: this.selectedCategoryId.toString()}
       }).subscribe(res => {
         console.log('Note added');
+      });
+    } else {
+      const req = {
+        title: this.title,
+        description: this.description,
+        category: this.categories.filter(c => c.id.toString() === this.selectedCategoryId.toString())[0]
+      };
+      this.apiService.updateNote(req, this.noteId).subscribe(res => {
+        console.log('Note updated');
       });
     }
   }

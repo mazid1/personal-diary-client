@@ -37,4 +37,12 @@ export class ApiService {
   public createNote(obj: { title: string, description: string, category: { id: string } }) {
     return this.httpClient.post(`${this.apiUrl}/note`, obj);
   }
+
+  public deleteNote(id: string | number) {
+    return this.httpClient.delete(`${this.apiUrl}/note/${id}`);
+  }
+
+  public updateNote(obj: { title?: string, description?: string, category?: Category }, id) {
+    return this.httpClient.put(`${this.apiUrl}/note/${id}`, obj);
+  }
 }
