@@ -17,7 +17,6 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit() {
     this.authenticationService.currentUser.subscribe(user => {
-      console.log(user);
       this.currentUser = user;
     });
   }

@@ -21,7 +21,6 @@ export class NotesComponent implements OnInit {
     // console.log('CategoryId', this.categoryId);
     this.apiService.getNotesByCategory(this.categoryId).subscribe(res => {
       this.notes = res;
-      console.log(this.notes);
     });
   }
 
