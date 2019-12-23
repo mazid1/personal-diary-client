@@ -15,7 +15,7 @@
       <ngb-tabset>
         <ngb-tab *ngFor="let cat of categories; let i=index;" [id]="cat.id.toString()" title="{{cat.title}}">
           <ng-template ngbTabContent>
-            <app-notes></app-notes>
+            <app-notes [categoryId]="cat.id"></app-notes>
           </ng-template>
         </ngb-tab>
       </ngb-tabset>

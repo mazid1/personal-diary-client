@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {ApiService} from '../../services/api.service';
+import {Note} from '../../models/note';
 
 @Component({
   selector: 'app-notes',
@@ -8,10 +10,19 @@ import {Router} from '@angular/router';
 })
 export class NotesComponent implements OnInit {
 
-  constructor(private router: Router) {
+  @Input()
+  categoryId: any;
+  notes: Note[];
+
+  constructor(private router: Router, private apiService: ApiService) {
   }
 
   ngOnInit() {
+    // console.log('CategoryId', this.categoryId);
+    this.apiService.getNotesByCategory(this.categoryId).subscribe(res => {
+      this.notes = res;
+      console.log(this.notes);
+    });
   }
 
   clicked(id: string) {

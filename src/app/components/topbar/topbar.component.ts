@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-topbar',
@@ -11,7 +12,7 @@ export class TopbarComponent implements OnInit {
   title = 'Personal Diary';
   currentUser: any;
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor(private authenticationService: AuthenticationService, private router: Router) {
   }
 
   ngOnInit() {
@@ -23,5 +24,6 @@ export class TopbarComponent implements OnInit {
 
   logout() {
     this.authenticationService.logout();
+    this.router.navigate(['/']);
   }
 }

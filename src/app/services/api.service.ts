@@ -3,6 +3,7 @@ import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Category} from '../models/category';
 import {Observable} from 'rxjs';
+import {Note} from '../models/note';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class ApiService {
 
   public updateCategory(obj: { id: string, title: string }) {
     return this.httpClient.put(`${this.apiUrl}/category/${obj.id}`, obj);
+  }
+
+  public getNotesByCategory(id: string | number): Observable<Note[]> {
+    return this.httpClient.get<Note[]>(`${this.apiUrl}/notes/category/${id}`);
   }
 }
